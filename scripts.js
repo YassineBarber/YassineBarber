@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     console.log("DOM fully loaded and parsed");
 
+    // Testimonial Slideshow Logic
     const testimonials = document.querySelectorAll('.testimonial-card');
     const dots = document.querySelectorAll('.dot');
     let currentTestimonial = 0;
@@ -42,4 +43,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     startSlideshow();
+
+    // Mobile Menu Logic
+    const burgerMenu = document.querySelector('.burger-menu');
+    const navLinks = document.querySelector('.nav-links');
+
+    burgerMenu.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+    // Close mobile menu when a link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
 });

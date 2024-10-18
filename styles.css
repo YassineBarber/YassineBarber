@@ -14,6 +14,59 @@
 }
 
 
+/* Responsive Design for Mobile */
+
+@media (max-width: 760px) {
+    .hero {
+        background-position: unset !important;
+    }
+    .nav-links {
+        display: none;
+        /* Hide default links */
+        flex-direction: column;
+        /* Stack menu items */
+        /* Positioning for mobile menu */
+        top: 60px;
+        /* Position below header */
+        left: 0;
+        background-color: var(--primary-color);
+        width: 100%;
+        z-index: 999;
+    }
+    .nav-links.active {
+        display: flex;
+        /* Show links when active */
+    }
+    .burger-menu {
+        display: block;
+        /* Show burger icon on mobile */
+        cursor: pointer;
+    }
+    .burger-menu div {
+        width: 30px;
+        height: 3px;
+        background-color: white;
+        margin: 5px 0;
+        /* Space between burger lines */
+        transition: 0.3s;
+    }
+    .services-grid,
+    .opening-hours-grid,
+    .pricing-grid {
+        flex-direction: column;
+        /* Stack cards */
+        align-items: center;
+        /* Center items */
+    }
+    .service-card,
+    .opening-day,
+    .pricing-card {
+        flex-basis: 90%;
+        /* Full width on mobile */
+    }
+}
+
+
 /* General Reset */
 
 * {
@@ -45,7 +98,7 @@ body {
 header {
     background-color: var(--primary-color);
     color: white;
-    padding: 20px 0;
+    padding: 15px 0;
     position: fixed;
     top: 0;
     width: 100%;
@@ -64,7 +117,8 @@ nav {
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    /* Smaller font for mobile */
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -76,7 +130,8 @@ nav {
 }
 
 .nav-links li {
-    margin-left: 30px;
+    margin-left: 15px;
+    /* Smaller spacing for mobile */
 }
 
 .nav-links a {
@@ -92,6 +147,7 @@ nav {
 
 .burger-menu {
     display: none;
+    /* Hidden on larger screens */
 }
 
 
@@ -99,12 +155,14 @@ nav {
 
 .call-whatsapp-buttons {
     display: flex;
-    gap: 15px;
+    gap: 10px;
+    /* Smaller gap for mobile */
 }
 
 .call-button,
 .whatsapp-button {
-    padding: 12px 20px;
+    padding: 8px 15px;
+    /* Smaller buttons for mobile */
     background-color: var(--secondary-color);
     color: white;
     text-decoration: none;
@@ -126,9 +184,11 @@ nav {
     right: 20px;
     background-color: var(--secondary-color);
     color: white;
-    padding: 15px 20px;
+    padding: 10px 15px;
+    /* Smaller button for mobile */
     border-radius: 50px;
-    font-size: 16px;
+    font-size: 14px;
+    /* Smaller font for mobile */
     font-weight: bold;
     text-decoration: none;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -147,8 +207,9 @@ nav {
     background-image: url('img/main_font.png');
     /* Replace with real image */
     background-size: cover;
-    background-position: center;
-    height: 100vh;
+    background-position: right;
+    height: 85vh;
+    /* Adjusted height for mobile */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -173,22 +234,26 @@ nav {
 }
 
 .hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
+    font-size: 2.5rem;
+    /* Smaller font for mobile */
+    margin-bottom: 15px;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
+    /* Reduced spacing */
 }
 
 .hero p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
+    font-size: 1rem;
+    /* Smaller font for mobile */
+    margin-bottom: 20px;
 }
 
 .cta-button {
     display: inline-block;
     background-color: var(--secondary-color);
     color: white;
-    padding: 12px 30px;
+    padding: 10px 20px;
+    /* Smaller padding for mobile */
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
@@ -203,45 +268,55 @@ nav {
 
 .services-section {
     background-color: var(--light-bg-color);
-    padding: 80px 0;
+    padding: 40px 0;
+    /* Reduced padding for mobile */
 }
 
 .section-title {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
+    font-size: 2rem;
+    /* Smaller font for mobile */
+    margin-bottom: 20px;
     text-align: center;
     color: var(--primary-color);
 }
 
 .services-grid {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 10px;
+    /* Smaller gap for mobile */
 }
 
 .service-card {
-    flex-basis: calc(33.333% - 20px);
+    flex-basis: calc(45% - 10px);
+    /* Smaller cards for mobile */
     background-color: white;
     border-radius: 10px;
-    padding: 30px;
+    padding: 15px;
+    /* Smaller padding for mobile */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
 .service-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
+    /* Reduced hover effect */
 }
 
 .service-icon {
-    font-size: 3rem;
+    font-size: 2rem;
+    /* Smaller icon size */
     color: var(--secondary-color);
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    /* Smaller margin */
 }
 
 .service-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
+    font-size: 1.2rem;
+    /* Smaller font for mobile */
+    margin-bottom: 10px;
+    /* Smaller margin */
     color: var(--primary-color);
 }
 
@@ -250,44 +325,54 @@ nav {
 
 .opening-hours-section {
     background-color: var(--light-bg-color);
-    padding: 80px 0;
+    padding: 40px 0;
+    /* Reduced padding for mobile */
 }
 
 .opening-hours-grid {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 10px;
+    /* Smaller gap for mobile */
 }
 
 .opening-day {
-    flex-basis: calc(33.333% - 20px);
+    flex-basis: calc(45% - 10px);
+    /* Smaller cards for mobile */
     background-color: white;
     border-radius: 10px;
-    padding: 30px;
+    padding: 15px;
+    /* Smaller padding for mobile */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s ease;
 }
 
 .opening-day:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
+    /* Reduced hover effect */
 }
 
 .opening-day .service-icon {
-    font-size: 3rem;
+    font-size: 2rem;
+    /* Smaller icon size */
     color: var(--secondary-color);
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    /* Smaller margin */
 }
 
 .opening-day h3 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
+    font-size: 1.2rem;
+    /* Smaller font for mobile */
+    margin-bottom: 10px;
+    /* Smaller margin */
     color: var(--primary-color);
 }
 
 .opening-day p {
-    font-size: 1.2rem;
+    font-size: 1rem;
+    /* Smaller font for mobile */
     color: var(--secondary-color);
 }
 
@@ -296,34 +381,41 @@ nav {
 
 .pricing-section {
     background-color: var(--light-bg-color);
-    padding: 80px 0;
+    padding: 40px 0;
+    /* Reduced padding for mobile */
 }
 
 .pricing-grid {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 20px;
+    /* Reduced gap for mobile */
 }
 
 .pricing-card {
     background-color: var(--light-bg-color);
     border-radius: 10px;
-    padding: 30px;
+    padding: 15px;
+    /* Smaller padding for mobile */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
 .pricing-card h3 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    /* Smaller font for mobile */
     margin-bottom: 10px;
+    /* Smaller margin */
     color: var(--primary-color);
 }
 
 .pricing-card p {
-    font-size: 1.2rem;
+    font-size: 1rem;
+    /* Smaller font for mobile */
     color: var(--secondary-color);
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    /* Smaller margin */
 }
 
 
@@ -332,22 +424,34 @@ nav {
 .about-section {
     background-color: var(--primary-color);
     color: white;
-    padding: 80px 0;
+    padding: 40px 0;
+    /* Reduced padding for mobile */
 }
 
 .about-content {
     display: flex;
+    flex-direction: column;
+    /* Stack on mobile */
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .about-text {
-    flex-basis: 50%;
+    flex-basis: 100%;
+    /* Full width on mobile */
+    text-align: center;
+    /* Center text */
 }
 
 .about-image {
-    flex-basis: 40%;
+    flex-basis: 100%;
+    /* Full width on mobile */
+    margin-top: 20px;
+    /* Margin for spacing */
 }
+
+
+/* About Image */
 
 .about-image img {
     width: 100%;
@@ -359,18 +463,22 @@ nav {
 
 .gallery-section {
     background-color: var(--light-bg-color);
-    padding: 80px 0;
+    padding: 40px 0;
+    /* Reduced padding for mobile */
 }
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    /* Smaller images */
+    grid-gap: 10px;
+    /* Smaller gap */
 }
 
 .gallery-image {
     width: 100%;
-    height: 250px;
+    height: 150px;
+    /* Adjusted height */
     object-fit: cover;
     border-radius: 10px;
     transition: transform 0.3s ease;
@@ -384,15 +492,18 @@ nav {
 /* Testimonials Section */
 
 .testimonials-section {
-    padding: 40px 0;
+    padding: 20px 0;
+    /* Reduced padding for mobile */
     text-align: center;
 }
 
 .testimonial-slider {
     position: relative;
-    max-width: 600px;
+    max-width: 100%;
+    /* Responsive */
     margin: 0 auto;
-    height: 250px;
+    height: auto;
+    /* Adjusted for mobile */
 }
 
 .testimonial-card {
@@ -409,23 +520,30 @@ nav {
 }
 
 .testimonial-card img {
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    /* Smaller image */
+    height: 40px;
+    /* Smaller image */
     border-radius: 50%;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    /* Smaller margin */
 }
 
 .testimonial-dots {
-    margin-top: 20px;
+    margin-top: 10px;
+    /* Reduced margin */
 }
 
 .dot {
     display: inline-block;
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    /* Smaller dots */
+    height: 8px;
+    /* Smaller dots */
     border-radius: 50%;
     background-color: #ccc;
-    margin: 0 5px;
+    margin: 0 3px;
+    /* Smaller spacing */
     cursor: pointer;
 }
 
@@ -437,7 +555,8 @@ nav {
 /* Location Section */
 
 .location-section {
-    padding: 60px 0;
+    padding: 30px 0;
+    /* Reduced padding for mobile */
     background-color: #f8f8f8;
 }
 
@@ -445,29 +564,35 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
+    /* Smaller gap */
 }
 
 .location-details .address {
     text-align: center;
-    font-size: 18px;
+    font-size: 16px;
+    /* Smaller font */
 }
 
 .location-details .address h3 {
     font-weight: 600;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    /* Smaller margin */
 }
 
 .location-details .map {
-    margin-top: 20px;
+    margin-top: 10px;
+    /* Reduced margin */
     width: 100%;
-    max-width: 600px;
+    max-width: 100%;
+    /* Full width */
 }
 
 .location-details iframe {
     width: 100%;
     border: none;
-    height: 300px;
+    height: 200px;
+    /* Smaller map */
 }
 
 
@@ -476,6 +601,7 @@ nav {
 .footer {
     background-color: var(--primary-color);
     color: white;
-    padding: 20px 0;
+    padding: 15px 0;
+    /* Reduced padding for mobile */
     text-align: center;
 }
